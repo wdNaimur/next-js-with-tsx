@@ -1,11 +1,11 @@
 import React from "react";
 
-export default async function Review({
+export default async function ProductReview({
   params,
 }: {
-  params: Promise<{ productId: string; reviewId: string }>;
+  params: { productId: string; reviewId: string };
 }) {
-  const { reviewId, productId } = await params;
+  const { productId, reviewId } = await params;
   return (
     <div>
       Review {reviewId} for Product {productId}
