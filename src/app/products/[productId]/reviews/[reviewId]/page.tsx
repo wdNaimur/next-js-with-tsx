@@ -1,14 +1,18 @@
-import React from "react";
+import { notFound } from "next/navigation";
+import { parse } from "path";
 
-export default async function Review({
+export default async function ProductReview({
   params,
 }: {
   params: Promise<{ productId: string; reviewId: string }>;
 }) {
-  const { reviewId, productId } = await params;
+  const { productId, reviewId } = await params;
+  if (parseInt(reviewId) > 1000) {
+    notFound();
+  }
   return (
     <div>
-      Review {reviewId} for Product {productId}
+      This is Review {reviewId} for Product {productId}
     </div>
   );
 }
