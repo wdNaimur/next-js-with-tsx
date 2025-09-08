@@ -1,20 +1,17 @@
-import React from "react";
-
-export default async function Doc({
+export default async function Docs({
   params,
 }: {
   params: Promise<{ slug: string[] }>;
 }) {
   const { slug } = await params;
-  if (slug?.length == 2) {
+  if (slug?.length === 1) {
+    return <h1>Viewing docs for feature {slug[0]}</h1>;
+  } else if (slug?.length === 2) {
     return (
-      <div>
-        Viewing Docs for feature {slug[0]} and concept of {slug[1]}
-      </div>
+      <h1>
+        Viewing docs for feature {slug[0]} and concept {slug[1]}
+      </h1>
     );
   }
-  if (slug?.length == 1) {
-    return <div>Viewing All Docs of {slug[0]}</div>;
-  }
-  return <div>Doc Details Page {...slug}</div>;
+  return <h1>Docs Home Page in slug folder</h1>;
 }
