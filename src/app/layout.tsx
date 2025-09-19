@@ -13,10 +13,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`flex flex-col min-h-screen bg-zinc-900 text-zinc-100 font-bold items-center justify-center text-4xl`}
-      >
-        {children}
+      <body className="flex flex-col min-h-screen bg-zinc-900 text-zinc-100 font-bold">
+        {/* Header */}
+        <header className="w-full py-6 bg-zinc-800 text-center text-2xl shadow-md">
+          <h1>My Website Header</h1>
+        </header>
+
+        {/* Main content */}
+        <main className="flex-1 flex items-center justify-center text-4xl">
+          {children}
+        </main>
+
+        {/* Footer */}
+        <footer className="w-full py-4 bg-zinc-800 text-center text-lg">
+          <p>© {new Date().getFullYear()} My Website. All rights reserved.</p>
+        </footer>
       </body>
     </html>
   );
