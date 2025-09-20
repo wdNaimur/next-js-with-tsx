@@ -20,7 +20,7 @@ export default function RootLayout({
         </header>
 
         {/* Main content */}
-        <main className="flex-1 flex items-center justify-center text-4xl">
+        <main className="flex-1 container mx-auto py-5 text-4xl">
           {children}
         </main>
 
